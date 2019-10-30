@@ -14,7 +14,7 @@ public class DestroyByContact : MonoBehaviour
     public int lifeValue;
     public bool addLives;
     public bool addScore;
-
+    public bool goodDrops;
     public bool powerUp;
 
     void Start()
@@ -36,7 +36,10 @@ public class DestroyByContact : MonoBehaviour
         {
             return;
         }
-
+        if(goodDrops)
+                {   if (other.CompareTag("Player"))
+                        gameController.AddLives(lifeValue);
+                }
         if (powerUp)
         {
             if (other.CompareTag("Player") && addLives)
@@ -48,6 +51,7 @@ public class DestroyByContact : MonoBehaviour
             {
                 gameController.AddScore(scoreValue);
             }
+        
         } else
         {
             if (other.CompareTag("Player"))
