@@ -33,6 +33,7 @@ public class GameController : MonoBehaviour
     float score;
 
     public int lives;
+    private float livesHelper = 0;
 
     private bool increaseSpeed = false;
     private bool decreaseSpeed = false;
@@ -62,6 +63,19 @@ public class GameController : MonoBehaviour
         {
             score += speed/20*(-1);
             UpdateScore();
+
+            if (!isImmortal)
+            {
+                livesHelper += speed / 100 * (-1);
+                Debug.Log(livesHelper);
+
+                if(livesHelper > 10f)
+                {
+                    DecreaseLives();
+                    UpdateLives();
+                    livesHelper = 0;
+                }
+            }
         }
 
 
@@ -214,6 +228,8 @@ public class GameController : MonoBehaviour
     public void GameOver() {
         gameOverText.text = "Game Over!";
         gameOver = true;
+        speed = 0;
+        Destroy(GameObject.FindWithTag("Player"));
 
         if (PlayerPrefs.HasKey("highestScore"))
         {

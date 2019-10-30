@@ -44,7 +44,7 @@ public class DestroyByContact : MonoBehaviour
 
                 if (gameController.lives == 0)
                 {
-                    Destroy(other.gameObject);
+                    //Destroy(other.gameObject);
                 }
             }
 

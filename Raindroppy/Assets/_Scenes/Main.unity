@@ -874,7 +874,7 @@ MonoBehaviour:
   gameOverText: {fileID: 2025045107}
   livesText: {fileID: 380940654}
   cycleLength: 1
-  lives: 1
+  lives: 10
 --- !u!4 &1771503716
 Transform:
   m_ObjectHideFlags: 0
