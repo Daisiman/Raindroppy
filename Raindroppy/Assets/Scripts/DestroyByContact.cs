@@ -32,57 +32,23 @@ public class DestroyByContact : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Boundary") || other.CompareTag("Enemy"))
+        if (other.CompareTag("Player"))
         {
-            return;
-        }
-
-        if(goodDrops)
-        {   if (other.CompareTag("Player"))
+            if (goodDrops)
+            {
                 gameController.AddLives(lifeValue);
-                Destroy(gameObject);
-        }
-
-        if (powerUp)
-        {
-            if (other.CompareTag("Player") && addLives)
-            {
-                gameController.DoubleLives();
             }
-
-            if (other.CompareTag("Player") && addScore)
-            {
-                gameController.AddScore(scoreValue);
-            }
-        
-        } else
-        {
-            if (other.CompareTag("Player"))
+            else
             {
                 gameController.DecreaseLives();
-                Destroy(gameObject);
+
+                if (gameController.lives == 0)
+                {
+                    Destroy(other.gameObject);
+                }
             }
-        }
 
-        //lives--;
-
-        if (lives == 0) {
-            Debug.Log("Destroy " + gameObject);
             Destroy(gameObject);
-
-            if (!powerUp) {
-                gameController.AddScore(scoreValue);
-            }
-
-            if (explosion != null) {
-                Instantiate(explosion, transform.position, transform.rotation);
-            }
-        }
-
-        if (other.CompareTag("Player") && gameController.lives == 0) {
-            Instantiate(playerExplosion, other.transform.position, other.transform.rotation);
-            Debug.Log("Destroy pl" + gameObject);
-            Destroy(other.gameObject);
         }
     }
 }
