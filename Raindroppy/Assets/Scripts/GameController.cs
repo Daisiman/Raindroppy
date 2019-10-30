@@ -14,7 +14,7 @@ public class GameController : MonoBehaviour
     public float spawnWait;
     public float startWait;
     public float waveWait;
-    public int speed;
+    public float speed;
     private bool isImmortal = false;
 
     public GUIText scoreText;
@@ -33,6 +33,9 @@ public class GameController : MonoBehaviour
     int score;
 
     public int lives;
+
+    private bool increaseSpeed = false;
+    private bool decreaseSpeed = false;
 
     void Start()
     {
@@ -55,6 +58,28 @@ public class GameController : MonoBehaviour
                 Application.LoadLevel(Application.loadedLevel);
             }
         }
+
+        //if (increaseSpeed)
+        //{
+        //    speed -= 0.02f;
+        //    if (speed < -5f)
+        //    {
+        //        increaseSpeed = false;
+        //        Debug.Log("Increase speed done");
+        //        speed = -5f;
+        //    }
+        //}
+
+        //if (decreaseSpeed)
+        //{
+        //    speed += 0.02f;
+        //    if (speed > -1f)
+        //    {
+        //        decreaseSpeed = false;
+        //        Debug.Log("Decrease speed done");
+        //        speed = -1f;
+        //    }
+        //}
 	}
 
 	IEnumerator SpawnWaves()
@@ -127,10 +152,25 @@ public class GameController : MonoBehaviour
         UpdateLives();
     }
 
+
     public void GiveBoost()
     {
-        speed = -5;
+        StartCoroutine(GiveBoostCoroutine());
+    }
+
+    IEnumerator GiveBoostCoroutine()
+    {
+        Debug.Log("Inside GiveBoost()");
+
+        speed = -10f;
         isImmortal = true;
+
+        //while (increaseSpeed) { }
+
+        yield return new WaitForSeconds(5f);
+
+        speed = -1f;
+        isImmortal = false;
     }
 
     public void AddLives(int lifeValue)

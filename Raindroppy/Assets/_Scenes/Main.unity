@@ -860,8 +860,8 @@ MonoBehaviour:
   - {fileID: 1083927836404738198, guid: b85cf5634e5334ac8bc2dcc6d53c982b, type: 3}
   - {fileID: 3962664443786178411, guid: 331df1fe505384b129cec5dff673123e, type: 3}
   powerUps:
-  - {fileID: 1085341398999316, guid: 852c396ca29be4c2db427ea6be263ee0, type: 3}
   - {fileID: 1502331535128278, guid: b964be024f7af40818a96ed98902c6ec, type: 3}
+  - {fileID: 1085341398999316, guid: 852c396ca29be4c2db427ea6be263ee0, type: 3}
   spawnValues: {x: 6, y: 0, z: 16}
   raindropSpawnValues: {x: 6, y: 0, z: 0}
   hazardCount: 20
@@ -874,7 +874,7 @@ MonoBehaviour:
   gameOverText: {fileID: 2025045107}
   livesText: {fileID: 380940654}
   cycleLength: 1
-  lives: 3
+  lives: 300
 --- !u!4 &1771503716
 Transform:
   m_ObjectHideFlags: 0
