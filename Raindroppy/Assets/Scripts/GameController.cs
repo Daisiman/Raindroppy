@@ -30,7 +30,7 @@ public class GameController : MonoBehaviour
     }
 
     bool restart;
-    int score;
+    float score;
 
     public int lives;
 
@@ -44,7 +44,7 @@ public class GameController : MonoBehaviour
         restartText.text = "";
         gameOverText.text = "";
         gameOverText.text = "";
-        score = 0;
+        score = 0f;
         UpdateScore();
         UpdateLives();
         StartCoroutine(SpawnWaves());
@@ -58,6 +58,12 @@ public class GameController : MonoBehaviour
                 Application.LoadLevel(Application.loadedLevel);
             }
         }
+        else
+        {
+            score += speed/20*(-1);
+            UpdateScore();
+        }
+
 
         //if (increaseSpeed)
         //{
@@ -142,7 +148,7 @@ public class GameController : MonoBehaviour
 
     public void AddScore(int newScoreValue)
     {
-        score += newScoreValue;
+        //score += (float)newScoreValue;
         UpdateScore();
     }
 
@@ -165,8 +171,6 @@ public class GameController : MonoBehaviour
         speed = -10f;
         isImmortal = true;
 
-        //while (increaseSpeed) { }
-
         yield return new WaitForSeconds(5f);
 
         speed = -1f;
@@ -181,7 +185,8 @@ public class GameController : MonoBehaviour
 
     void UpdateScore()
     {
-        scoreText.text = $"Score: {score}";
+        int scoreValue = (int)Mathf.Round(score);
+        scoreText.text = $"Score: {scoreValue}";
     }
 
     void UpdateLives()
@@ -219,11 +224,11 @@ public class GameController : MonoBehaviour
             if (score > highestScore) {
                 gameOverText.text = "New highscore!";
 
-                PlayerPrefs.SetInt("highestScore", score);
+                PlayerPrefs.SetInt("highestScore", (int)Mathf.Round(score));
             }
         } else {
             gameOverText.text = "New highscore!";
-            PlayerPrefs.SetInt("highestScore", score);
+            PlayerPrefs.SetInt("highestScore", (int)Mathf.Round(score));
         }
     } 
 }
