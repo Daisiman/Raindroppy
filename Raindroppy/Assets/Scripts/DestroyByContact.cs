@@ -14,7 +14,7 @@ public class DestroyByContact : MonoBehaviour
     public int lifeValue;
     public bool addLives;
     public bool addScore;
-
+    public bool goodDrops;
     public bool powerUp;
 
     void Start()
@@ -32,49 +32,23 @@ public class DestroyByContact : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Boundary") || other.CompareTag("Enemy"))
+        if (other.CompareTag("Player"))
         {
-            return;
-        }
-
-        if (powerUp)
-        {
-            if (other.CompareTag("Player") && addLives)
+            if (goodDrops)
             {
-                gameController.DoubleLives();
+                gameController.AddLives(lifeValue);
             }
-
-            if (other.CompareTag("Player") && addScore)
-            {
-                gameController.AddScore(scoreValue);
-            }
-        } else
-        {
-            if (other.CompareTag("Player"))
+            else
             {
                 gameController.DecreaseLives();
+
+                if (gameController.lives == 0)
+                {
+                    Destroy(other.gameObject);
+                }
             }
-        }
 
-        //lives--;
-
-        if (lives == 0) {
-            Debug.Log("Destroy " + gameObject);
             Destroy(gameObject);
-
-            if (!powerUp) {
-                gameController.AddScore(scoreValue);
-            }
-
-            if (explosion != null) {
-                Instantiate(explosion, transform.position, transform.rotation);
-            }
-        }
-
-        if (other.CompareTag("Player") && gameController.lives == 0) {
-            Instantiate(playerExplosion, other.transform.position, other.transform.rotation);
-            Debug.Log("Destroy pl" + gameObject);
-            Destroy(other.gameObject);
         }
     }
 }
