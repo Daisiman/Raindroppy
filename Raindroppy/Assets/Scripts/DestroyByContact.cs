@@ -41,7 +41,7 @@ public class DestroyByContact : MonoBehaviour
         {
             if (other.CompareTag("Player") && addLives)
             {
-                gameController.AddLives(lifeValue);
+                gameController.DoubleLives();
             }
 
             if (other.CompareTag("Player") && addScore)
@@ -56,9 +56,10 @@ public class DestroyByContact : MonoBehaviour
             }
         }
 
-        lives--;
+        //lives--;
 
         if (lives == 0) {
+            Debug.Log("Destroy " + gameObject);
             Destroy(gameObject);
 
             if (!powerUp) {
@@ -72,6 +73,7 @@ public class DestroyByContact : MonoBehaviour
 
         if (other.CompareTag("Player") && gameController.lives == 0) {
             Instantiate(playerExplosion, other.transform.position, other.transform.rotation);
+            Debug.Log("Destroy pl" + gameObject);
             Destroy(other.gameObject);
         }
     }

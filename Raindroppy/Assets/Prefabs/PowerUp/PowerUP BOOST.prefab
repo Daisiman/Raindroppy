@@ -12,10 +12,10 @@ GameObject:
   - component: {fileID: 54411762536710416}
   - component: {fileID: 136817301043309318}
   - component: {fileID: 114925595844420622}
-  - component: {fileID: 114215484698179130}
   - component: {fileID: 114842896502202550}
+  - component: {fileID: 114834007269124340}
   m_Layer: 0
-  m_Name: PowerUP SCORE
+  m_Name: PowerUP BOOST
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -79,27 +79,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tumble: 5
---- !u!114 &114215484698179130
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1085341398999316}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c1b933ee27831460b83cd53a6a119c0a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  explosion: {fileID: 0}
-  playerExplosion: {fileID: 0}
-  scoreValue: 100
-  lives: 1
-  isBoss: 0
-  lifeValue: 1
-  addLives: 0
-  addScore: 1
-  powerUp: 1
 --- !u!114 &114842896502202550
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -112,7 +91,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 402de64f023ab4e06bdda5aa6fc17dec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: -5
+  speed: -2
+--- !u!114 &114834007269124340
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1085341398999316}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a6a6d5fdd193c46b7b05e82bb48b7c3f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scoreValue: 100
+  isLivesPowerUp: 0
+  isBoostPowerUp: 1
 --- !u!1 &1999192733723444
 GameObject:
   m_ObjectHideFlags: 0

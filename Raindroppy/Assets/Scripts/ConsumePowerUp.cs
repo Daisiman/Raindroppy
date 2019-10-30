@@ -3,9 +3,8 @@
 public class ConsumePowerUp : MonoBehaviour
 {
     public int scoreValue;
-    public int lifeValue;
-    public bool addLives;
-    public bool addScore;
+    public bool isLivesPowerUp;
+    public bool isBoostPowerUp;
     GameController gameController;
 
     void Start()
@@ -19,16 +18,20 @@ public class ConsumePowerUp : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
-        if (addLives)
+        if (other.CompareTag("Player"))
         {
-            gameController.AddLives(lifeValue);
-        }
+            if (isLivesPowerUp)
+            {
+                gameController.DoubleLives();
+            }
 
-        if (addScore) {
-            gameController.AddScore(scoreValue);
-        }
+            if (isBoostPowerUp)
+            {
+                gameController.GiveBoost();
+            }
 
-        Destroy(gameObject);
+            Destroy(gameObject);
+        }
     }
 }
 

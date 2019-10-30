@@ -14,6 +14,8 @@ public class GameController : MonoBehaviour
     public float spawnWait;
     public float startWait;
     public float waveWait;
+    public int speed;
+    private bool isImmortal = false;
 
     public GUIText scoreText;
     public GUIText restartText;
@@ -80,19 +82,21 @@ public class GameController : MonoBehaviour
 
                 if (j == cycleLength - 1)
                 {
-                    //// power up
-                    //GameObject powerUp = powerUps[Random.Range(0, powerUps.Length)];
-                    //Vector3 spawnPositionPowerUp = new Vector3(Random.Range(-spawnValues.x, spawnValues.x), spawnValues.y, spawnValues.z);
-                    //Quaternion spawnRotationPowerUp = Quaternion.identity;
-                    //Instantiate(powerUp, spawnPositionPowerUp, spawnRotationPowerUp);
 
-                    //yield return new WaitForSeconds(spawnWait);
+                    Debug.Log("Spawn powerup");
+                    // power up
+                    GameObject powerUp = powerUps[Random.Range(0, powerUps.Length)];
+                    Vector3 spawnPositionPowerUp = new Vector3(Random.Range(-spawnValues.x, spawnValues.x), spawnValues.y, spawnValues.z);
+                    Quaternion spawnRotationPowerUp = Quaternion.identity;
+                    Instantiate(powerUp, spawnPositionPowerUp, spawnRotationPowerUp);
 
-                    // raindrop
-                    GameObject raindrop = raindrops[Random.Range(0, raindrops.Length)];
-                    Vector3 spawnPosition = new Vector3(Random.Range(-raindropSpawnValues.x, raindropSpawnValues.x), raindropSpawnValues.y, raindropSpawnValues.z);
-                    Quaternion spawnRotation = Quaternion.identity;
-                    Instantiate(raindrop, spawnPosition, spawnRotation);
+                    yield return new WaitForSeconds(spawnWait);
+
+                    //// raindrop
+                    //GameObject raindrop = raindrops[Random.Range(0, raindrops.Length)];
+                    //Vector3 spawnPosition = new Vector3(Random.Range(-raindropSpawnValues.x, raindropSpawnValues.x), raindropSpawnValues.y, raindropSpawnValues.z);
+                    //Quaternion spawnRotation = Quaternion.identity;
+                    //Instantiate(raindrop, spawnPosition, spawnRotation);
                 }
 
                 yield return new WaitForSeconds(waveWait);
@@ -117,6 +121,18 @@ public class GameController : MonoBehaviour
         UpdateScore();
     }
 
+    public void DoubleLives()
+    {
+        lives *= 2;
+        UpdateLives();
+    }
+
+    public void GiveBoost()
+    {
+        speed = -5;
+        isImmortal = true;
+    }
+
     public void AddLives(int lifeValue)
     {
         lives += lifeValue;
@@ -125,23 +141,28 @@ public class GameController : MonoBehaviour
 
     void UpdateScore()
     {
-        scoreText.text = "Score: " + score;
+        scoreText.text = $"Score: {score}";
     }
 
     void UpdateLives()
     {
-        livesText.text = "Lives 1: " + lives;
+        livesText.text = $"Lives: {lives}";
     }
 
     public void DecreaseLives() {
-        if (lives > 0) {
-            lives--;
-        }
+        if (!isImmortal)
+        {
+            if (lives > 0)
+            {
+                lives--;
+            }
 
-        UpdateLives();
+            UpdateLives();
 
-        if (lives == 0) {
-            GameOver();
+            if (lives == 0)
+            {
+                GameOver();
+            }
         }
     }
 

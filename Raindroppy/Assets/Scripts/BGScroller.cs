@@ -5,6 +5,7 @@ using UnityEngine;
 public class BGScroller : MonoBehaviour
 {
 
+    GameController gameController;
     public float scrollSpeed;
     public float tileSizeZ;
 
@@ -12,12 +13,22 @@ public class BGScroller : MonoBehaviour
 
     void Start()
     {
+        GameObject gameControllerObject = GameObject.FindWithTag("GameController");
+        if (gameControllerObject != null)
+        {
+            gameController = gameControllerObject.GetComponent<GameController>();
+        }
+        if (gameController == null)
+        {
+            Debug.Log("Cannot find 'GameController' script");
+        }
+
         startPosition = transform.position;
     }
 
     void Update()
     {
-        float newPosition = Mathf.Repeat(Time.time * scrollSpeed, tileSizeZ);
+        float newPosition = Mathf.Repeat(Time.time * gameController.speed, tileSizeZ);
         transform.position = startPosition + Vector3.forward * newPosition;
     }
 }

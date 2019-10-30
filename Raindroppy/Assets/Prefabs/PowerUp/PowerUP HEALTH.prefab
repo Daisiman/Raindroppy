@@ -109,8 +109,8 @@ GameObject:
   - component: {fileID: 54541607311937128}
   - component: {fileID: 136564527738030816}
   - component: {fileID: 114453897306310062}
-  - component: {fileID: 114426642476596382}
   - component: {fileID: 114373170679627716}
+  - component: {fileID: 114221579485808118}
   m_Layer: 0
   m_Name: PowerUP HEALTH
   m_TagString: Enemy
@@ -176,27 +176,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tumble: 5
---- !u!114 &114426642476596382
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1502331535128278}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c1b933ee27831460b83cd53a6a119c0a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  explosion: {fileID: 0}
-  playerExplosion: {fileID: 0}
-  scoreValue: 0
-  lives: 1
-  isBoss: 0
-  lifeValue: 1
-  addLives: 1
-  addScore: 0
-  powerUp: 1
 --- !u!114 &114373170679627716
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -209,4 +188,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 402de64f023ab4e06bdda5aa6fc17dec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: -5
+  speed: -2
+--- !u!114 &114221579485808118
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1502331535128278}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a6a6d5fdd193c46b7b05e82bb48b7c3f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scoreValue: 0
+  isLivesPowerUp: 1
+  isBoostPowerUp: 0

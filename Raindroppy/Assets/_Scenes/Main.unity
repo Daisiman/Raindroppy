@@ -319,11 +319,11 @@ GUIText:
   m_TabSize: 4
   m_Font: {fileID: 0}
   m_Material: {fileID: 0}
-  m_FontSize: 20
+  m_FontSize: 50
   m_FontStyle: 0
   m_Color:
     serializedVersion: 2
-    rgba: 4294967295
+    rgba: 4278190080
   m_PixelCorrect: 1
   m_RichText: 1
 --- !u!1 &435608477
@@ -847,8 +847,8 @@ MonoBehaviour:
   - {fileID: 8901881916083794622, guid: 659bca2aacbae4fd2b6b2c0de17076ba, type: 3}
   - {fileID: 5813294308731570376, guid: f85ccb204ff954687a558e9807c4735c, type: 3}
   - {fileID: 107554353805741005, guid: b38cbae3f0f7542a394afe148ed95fdf, type: 3}
-  - {fileID: 1502331535128278, guid: b964be024f7af40818a96ed98902c6ec, type: 3}
-  - {fileID: 1085341398999316, guid: 852c396ca29be4c2db427ea6be263ee0, type: 3}
+  - {fileID: 7565144036456422843, guid: 375a909ed81734cb1ac9a7bd2aee2407, type: 3}
+  - {fileID: 2365950916798600610, guid: 6c06efafde5b5407884cccc350a00c43, type: 3}
   - {fileID: 8901881916083794622, guid: 659bca2aacbae4fd2b6b2c0de17076ba, type: 3}
   - {fileID: 5813294308731570376, guid: f85ccb204ff954687a558e9807c4735c, type: 3}
   - {fileID: 107554353805741005, guid: b38cbae3f0f7542a394afe148ed95fdf, type: 3}
@@ -860,13 +860,15 @@ MonoBehaviour:
   - {fileID: 1083927836404738198, guid: b85cf5634e5334ac8bc2dcc6d53c982b, type: 3}
   - {fileID: 3962664443786178411, guid: 331df1fe505384b129cec5dff673123e, type: 3}
   powerUps:
-  - {fileID: 0}
+  - {fileID: 1085341398999316, guid: 852c396ca29be4c2db427ea6be263ee0, type: 3}
+  - {fileID: 1502331535128278, guid: b964be024f7af40818a96ed98902c6ec, type: 3}
   spawnValues: {x: 6, y: 0, z: 16}
   raindropSpawnValues: {x: 6, y: 0, z: 0}
   hazardCount: 20
   spawnWait: 0.5
   startWait: 1
   waveWait: 3
+  speed: -1
   scoreText: {fileID: 2086198446}
   restartText: {fileID: 1928081626}
   gameOverText: {fileID: 2025045107}
@@ -1239,11 +1241,11 @@ GUIText:
   m_TabSize: 4
   m_Font: {fileID: 0}
   m_Material: {fileID: 0}
-  m_FontSize: 20
+  m_FontSize: 50
   m_FontStyle: 0
   m_Color:
     serializedVersion: 2
-    rgba: 4294967295
+    rgba: 4278190080
   m_PixelCorrect: 1
   m_RichText: 1
 --- !u!1 &2025045105
@@ -1294,13 +1296,13 @@ GUIText:
   m_TabSize: 4
   m_Font: {fileID: 0}
   m_Material: {fileID: 0}
-  m_FontSize: 25
-  m_FontStyle: 0
+  m_FontSize: 50
+  m_FontStyle: 1
   m_Color:
     serializedVersion: 2
-    rgba: 4294967295
+    rgba: 4278190080
   m_PixelCorrect: 1
-  m_RichText: 1
+  m_RichText: 0
 --- !u!1 &2086198445
 GameObject:
   m_ObjectHideFlags: 0
@@ -1335,11 +1337,11 @@ GUIText:
   m_TabSize: 4
   m_Font: {fileID: 0}
   m_Material: {fileID: 0}
-  m_FontSize: 20
+  m_FontSize: 50
   m_FontStyle: 0
   m_Color:
     serializedVersion: 2
-    rgba: 4294967295
+    rgba: 4278190080
   m_PixelCorrect: 1
   m_RichText: 1
 --- !u!4 &2086198447
