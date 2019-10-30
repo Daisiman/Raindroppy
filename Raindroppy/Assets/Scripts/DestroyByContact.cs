@@ -36,10 +36,13 @@ public class DestroyByContact : MonoBehaviour
         {
             return;
         }
+
         if(goodDrops)
-                {   if (other.CompareTag("Player"))
-                        gameController.AddLives(lifeValue);
-                }
+        {   if (other.CompareTag("Player"))
+                gameController.AddLives(lifeValue);
+                Destroy(gameObject);
+        }
+
         if (powerUp)
         {
             if (other.CompareTag("Player") && addLives)
@@ -57,6 +60,7 @@ public class DestroyByContact : MonoBehaviour
             if (other.CompareTag("Player"))
             {
                 gameController.DecreaseLives();
+                Destroy(gameObject);
             }
         }
 
