@@ -27,6 +27,7 @@ public class DestroyByContact : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
+        // player hit
         if (other.CompareTag("Player"))
         {
             if (goodDrops)
@@ -38,9 +39,31 @@ public class DestroyByContact : MonoBehaviour
                 gameController.DecreaseLives();
             }
             Destroy(gameObject);
-        } else if (other.CompareTag("Raindrop"))
+        }
+        // raindrop hits other drops or power-ups
+        else if (other.CompareTag("Raindrop") && !gameObject.CompareTag("Obstacle"))
         {
+            other.transform.localScale *= 1.1f;
             Destroy(gameObject);
+        }
+        // raindrop hits obstacle
+        else if (other.CompareTag("Raindrop") && gameObject.CompareTag("Obstacle"))
+        {
+            Destroy(other.gameObject);
+        }
+        // two good drops collide
+        else if (other.CompareTag("Lives") && gameObject.CompareTag("Lives"))
+        {
+            if (other.transform.localScale.x > gameObject.transform.localScale.x)
+            {
+                Destroy(other.gameObject);
+                gameObject.transform.localScale *= 1.2f;
+            }
+            else
+            {
+                Destroy(gameObject);
+                other.transform.localScale *= 1.2f;
+            }
         }
     }
 }

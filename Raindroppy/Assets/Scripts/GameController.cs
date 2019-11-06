@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class GameController : MonoBehaviour
 {
-    public GameObject boss;
     public GameObject[] hazards;
     public GameObject[] raindrops;
     public GameObject[] powerUps;
@@ -33,10 +32,7 @@ public class GameController : MonoBehaviour
     float score;
 
     public int lives;
-    private float livesHelper = 0;
-
-    private bool increaseSpeed = false;
-    private bool decreaseSpeed = false;
+    private float livesHelper;
 
     void Start()
     {
@@ -76,29 +72,6 @@ public class GameController : MonoBehaviour
                 }
             }
         }
-
-
-        //if (increaseSpeed)
-        //{
-        //    speed -= 0.02f;
-        //    if (speed < -5f)
-        //    {
-        //        increaseSpeed = false;
-        //        Debug.Log("Increase speed done");
-        //        speed = -5f;
-        //    }
-        //}
-
-        //if (decreaseSpeed)
-        //{
-        //    speed += 0.02f;
-        //    if (speed > -1f)
-        //    {
-        //        decreaseSpeed = false;
-        //        Debug.Log("Decrease speed done");
-        //        speed = -1f;
-        //    }
-        //}
 	}
 
 	IEnumerator SpawnWaves()

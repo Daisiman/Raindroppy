@@ -996,7 +996,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d2091a4e3be1746f398a888661b6dac3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  boss: {fileID: 1217303140982284, guid: d5d8e072414ea48aea3fb606f925b63a, type: 3}
   hazards:
   - {fileID: 8901881916083794622, guid: 659bca2aacbae4fd2b6b2c0de17076ba, type: 3}
   - {fileID: 5813294308731570376, guid: f85ccb204ff954687a558e9807c4735c, type: 3}
@@ -1017,7 +1016,7 @@ MonoBehaviour:
   - {fileID: 1085341398999316, guid: 852c396ca29be4c2db427ea6be263ee0, type: 3}
   - {fileID: 1085341398999316, guid: 852c396ca29be4c2db427ea6be263ee0, type: 3}
   spawnValues: {x: 6, y: 0, z: 16}
-  raindropSpawnValues: {x: 6, y: 0, z: -3.99}
+  raindropSpawnValues: {x: 6, y: 0, z: -5}
   hazardCount: 20
   spawnWait: 0.5
   startWait: 1
