@@ -14,7 +14,8 @@ public class GameController : MonoBehaviour
     public float startWait;
     public float waveWait;
     public float speed;
-    private bool isImmortal = false;
+    public float speedBoost;
+    private bool isImmortal;
 
     public GUIText scoreText;
     public GUIText restartText;
@@ -65,7 +66,7 @@ public class GameController : MonoBehaviour
 
             if (!isImmortal)
             {
-                livesHelper += speed / 100 * (-1);
+                livesHelper += speed / 50 * (-1);
 
                 if(livesHelper > 10f)
                 {
@@ -75,8 +76,8 @@ public class GameController : MonoBehaviour
                 }
             }
 
-            player.transform.localScale = new Vector3(1f, 1f, 1f) * Mathf.Log10(lives);
-            speed = -1 * Mathf.Log10(lives);
+            player.transform.localScale = Vector3.MoveTowards(player.transform.localScale, new Vector3(1f, 1f, 1f) * Mathf.Log10(lives), Time.deltaTime * 3);
+            speed = speedBoost + -1 * Mathf.Log10(lives);
         }
 	}
 
@@ -157,7 +158,7 @@ public class GameController : MonoBehaviour
 
         for (float i = 0f; i < 1f; i += 0.01f)
         {
-            speed -= 0.1f;
+            speedBoost -= 0.1f;
             yield return new WaitForSeconds(i / 10);
         }
 
@@ -165,7 +166,7 @@ public class GameController : MonoBehaviour
 
         for (float i = 0f; i < 1f; i += 0.01f)
         {
-            speed += 0.1f;
+            speedBoost += 0.1f;
             yield return new WaitForSeconds(i / 10);
         }
 
