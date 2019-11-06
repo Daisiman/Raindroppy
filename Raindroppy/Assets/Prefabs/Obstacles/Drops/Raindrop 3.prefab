@@ -15,6 +15,8 @@ GameObject:
   - component: {fileID: 3962664443786178413}
   - component: {fileID: 54923677465465338}
   - component: {fileID: 114919869828917380}
+  - component: {fileID: 114231944037411440}
+  - component: {fileID: 114158124413983784}
   m_Layer: 0
   m_Name: Raindrop 3
   m_TagString: Untagged
@@ -115,7 +117,7 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3962664443786178411}
   serializedVersion: 2
-  m_Mass: 0.0000001
+  m_Mass: 0.05
   m_Drag: 0
   m_AngularDrag: 0
   m_UseGravity: 0
@@ -145,3 +147,37 @@ MonoBehaviour:
   addScore: 0
   goodDrops: 0
   powerUp: 0
+--- !u!114 &114231944037411440
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3962664443786178411}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cae7c0cc10e964c19a22e2a12ff1307b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &114158124413983784
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3962664443786178411}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8e575e792133c4f4bbb8ff9c9599eefb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dodge: 5
+  smoothing: 10
+  startWait: {x: 0, y: 0}
+  maneuverTime: {x: 0.5, y: 1}
+  maneuverWait: {x: 0, y: 0}
+  boundary:
+    xMin: -6
+    xMax: 6
+    zMin: -20
+    zMax: 20

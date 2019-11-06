@@ -164,7 +164,7 @@ Transform:
   m_GameObject: {fileID: 81658057}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 5}
-  m_LocalScale: {x: 15, y: 1, z: 20}
+  m_LocalScale: {x: 15, y: 1, z: 25}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 3
@@ -226,13 +226,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 159167083}
-  m_LocalRotation: {x: 0.020141201, y: 0.88616663, z: -0.038690887, w: 0.46130916}
+  m_LocalRotation: {x: -0.0016923568, y: 0.88700485, z: 0.003250987, w: 0.4617455}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 109231121}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 5, y: 125, z: 0}
+  m_LocalEulerAnglesHint: {x: -0.42, y: 125, z: 0}
 --- !u!108 &159167085
 Light:
   m_ObjectHideFlags: 0
@@ -443,13 +443,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 645508874}
-  m_LocalRotation: {x: 0.09330109, y: -0.83057845, z: 0.14645337, w: 0.5291368}
+  m_LocalRotation: {x: 0.24817385, y: -0.6935905, z: 0.27952495, w: 0.6157985}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 109231121}
   m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 20, y: -115, z: 0}
+  m_LocalEulerAnglesHint: {x: 43.9, y: -96.8, z: 0}
 --- !u!108 &645508876
 Light:
   m_ObjectHideFlags: 0
@@ -685,7 +685,6 @@ MonoBehaviour:
     xMax: 6
     zMin: -4
     zMax: 8
-  player2: 0
 --- !u!64 &1268425216
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -812,6 +811,18 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 0
+--- !u!114 &1268425221
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1268425213}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cae7c0cc10e964c19a22e2a12ff1307b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1771503714
 GameObject:
   m_ObjectHideFlags: 0
@@ -863,7 +874,7 @@ MonoBehaviour:
   - {fileID: 1085341398999316, guid: 852c396ca29be4c2db427ea6be263ee0, type: 3}
   - {fileID: 1085341398999316, guid: 852c396ca29be4c2db427ea6be263ee0, type: 3}
   spawnValues: {x: 6, y: 0, z: 16}
-  raindropSpawnValues: {x: 6, y: 0, z: 0}
+  raindropSpawnValues: {x: 6, y: 0, z: -3.99}
   hazardCount: 20
   spawnWait: 0.5
   startWait: 1
@@ -1163,7 +1174,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 5.574204
+  orthographic size: 10.846036
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2

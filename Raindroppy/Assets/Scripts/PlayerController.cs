@@ -17,22 +17,10 @@ public class PlayerController : MonoBehaviour
     public float tilt;
     public Boundary boundary;
 
-    public bool player2;
-
     void Start()
     {
         rb = GetComponent<Rigidbody>();
         audioSource = GetComponent<AudioSource>();
-    }
-
-    void Update()
-    {
-        //if (Input.GetKey(KeyCode.Space) && Time.time > nextFire)
-        //{
-        //    nextFire = Time.time + fireRate;
-        //    Instantiate(shot, shotSpawn.position, shotSpawn.rotation);
-        //    audioSource.Play();
-        //}
     }
 
     void FixedUpdate()
@@ -41,7 +29,7 @@ public class PlayerController : MonoBehaviour
         float moveVertical;
 
         moveHorizontal = -Input.GetAxis("Horizontal");
-        moveVertical = 0.0f; // Input.GetAxis("Vertical");
+        moveVertical = 0.0f;
 
         Vector3 movement = new Vector3(moveHorizontal, 0.0f, moveVertical);
         rb.velocity = movement * speed;

@@ -67,7 +67,7 @@ public class GameController : MonoBehaviour
             if (!isImmortal)
             {
                 livesHelper += speed / 100 * (-1);
-                Debug.Log(livesHelper);
+                //Debug.Log(livesHelper);
 
                 if(livesHelper > 10f)
                 {
@@ -109,6 +109,7 @@ public class GameController : MonoBehaviour
         {
             for (int j = 0; j < cycleLength; j++) {
                 {
+                    // raindrop
                     GameObject raindrop = raindrops[Random.Range(0, raindrops.Length)];
                     Vector3 spawnPosition = new Vector3(Random.Range(-raindropSpawnValues.x, raindropSpawnValues.x), raindropSpawnValues.y, raindropSpawnValues.z);
                     Quaternion spawnRotation = Quaternion.identity;
@@ -136,12 +137,6 @@ public class GameController : MonoBehaviour
                     Instantiate(powerUp, spawnPositionPowerUp, spawnRotationPowerUp);
 
                     yield return new WaitForSeconds(spawnWait);
-
-                    //// raindrop
-                    //GameObject raindrop = raindrops[Random.Range(0, raindrops.Length)];
-                    //Vector3 spawnPosition = new Vector3(Random.Range(-raindropSpawnValues.x, raindropSpawnValues.x), raindropSpawnValues.y, raindropSpawnValues.z);
-                    //Quaternion spawnRotation = Quaternion.identity;
-                    //Instantiate(raindrop, spawnPosition, spawnRotation);
                 }
 
                 yield return new WaitForSeconds(waveWait);
