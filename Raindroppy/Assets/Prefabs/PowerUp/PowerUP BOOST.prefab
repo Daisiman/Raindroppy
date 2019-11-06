@@ -80,7 +80,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 402de64f023ab4e06bdda5aa6fc17dec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: -1
+  multiplier: 1
 --- !u!114 &114834007269124340
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -95,8 +95,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isLivesPowerUp: 0
   isBoostPowerUp: 1
-  boostSound: {fileID: 280333857901965139, guid: eb6445772066a41f2b877c041f16be1d,
-    type: 3}
 --- !u!23 &6641915101820677484
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -152,8 +150,8 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 0}
-  m_PlayOnAwake: 1
+  m_audioClip: {fileID: 8300000, guid: a4a9327e98855524c846cc8e2f559e96, type: 3}
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 0

@@ -36,10 +36,12 @@ public class GameController : MonoBehaviour
     private float livesHelper;
 
     GameObject player;
+    PlayerController playerController;
 
     void Start()
     {
         player = GameObject.FindWithTag("Player");
+        playerController = player.GetComponent<PlayerController>();
         gameOver = false;
         restart = false;
         restartText.text = "";
@@ -176,6 +178,7 @@ public class GameController : MonoBehaviour
     public void AddLives(int lifeValue)
     {
         lives += lifeValue;
+        playerController.PlayPickupSound();
         UpdateLives();
     }
 

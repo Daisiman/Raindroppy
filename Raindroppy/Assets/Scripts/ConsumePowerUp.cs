@@ -4,10 +4,9 @@ public class ConsumePowerUp : MonoBehaviour
 {
     public bool isLivesPowerUp;
     public bool isBoostPowerUp;
-    public AudioSource boostSound;
+    AudioSource boostSound;
 
     GameController gameController;
-    SoundController soundController;
 
     void Start()
     {
@@ -17,11 +16,7 @@ public class ConsumePowerUp : MonoBehaviour
             gameController = gameControllerObject.GetComponent<GameController>();
         }
 
-        GameObject soundControllerObject = GameObject.FindWithTag("SoundController");
-        if (soundControllerObject != null)
-        {
-            soundController = soundControllerObject.GetComponent<SoundController>();
-        }
+        boostSound = GetComponent<AudioSource>();
     }
 
     void OnTriggerEnter(Collider other)
@@ -36,9 +31,9 @@ public class ConsumePowerUp : MonoBehaviour
             if (isBoostPowerUp)
             {
                 gameController.GiveBoost();
-                if (soundController != null)
+                if (boostSound != null)
                 {
-                    soundController.PlayBoost();
+                    boostSound.PlayOneShot(boostSound.clip);
                 }
             }
 

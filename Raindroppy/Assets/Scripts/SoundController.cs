@@ -7,6 +7,11 @@ public class SoundController : MonoBehaviour
     public AudioSource boostSound;
     public AudioSource livesSound;
 
+    void Start()
+    {
+        Debug.Log("Sound Controller loaded");
+    }
+
     public void PlayBoost()
     {
         if (boostSound != null)

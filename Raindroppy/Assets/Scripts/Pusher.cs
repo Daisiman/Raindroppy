@@ -7,7 +7,6 @@ public class Pusher : MonoBehaviour
     void OnCollisionEnter(Collision collision)
     {
         Rigidbody body = collision.rigidbody;
-        Debug.Log("Push");
         if (body != null && !body.isKinematic)
         {
             body.AddForce(transform.forward);
@@ -18,6 +17,5 @@ public class Pusher : MonoBehaviour
     void OnTriggerEnter(Collider other)
     {
         //other.
-        Debug.Log("Push 2");
     }
 }
