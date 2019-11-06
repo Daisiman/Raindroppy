@@ -17,6 +17,7 @@ GameObject:
   - component: {fileID: 114906793793637300}
   - component: {fileID: 114471703048852372}
   - component: {fileID: 114922873969724194}
+  - component: {fileID: 114635824147426096}
   m_Layer: 0
   m_Name: Raindrop 2
   m_TagString: Raindrop
@@ -176,3 +177,16 @@ MonoBehaviour:
     xMax: 6
     zMin: -20
     zMax: 20
+--- !u!114 &114635824147426096
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1083927836404738198}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ad04fc11361ec487c8c88691406f6577, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  minScale: {x: 0.5, y: 0.5, z: 0.5}

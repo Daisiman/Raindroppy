@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 2365950916798600616}
   - component: {fileID: 3395463082226065774}
   - component: {fileID: 114919785436991952}
+  - component: {fileID: 114085433879246564}
   m_Layer: 0
   m_Name: Drop 2
   m_TagString: Lives
@@ -106,7 +107,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 402de64f023ab4e06bdda5aa6fc17dec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: -1
+  multiplier: 0.8
 --- !u!54 &3395463082226065774
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -141,3 +142,17 @@ MonoBehaviour:
   lifeValue: 2
   goodDrops: 1
   powerUp: 0
+--- !u!114 &114085433879246564
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2365950916798600610}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ad04fc11361ec487c8c88691406f6577, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  minScale: {x: 0.5, y: 0.5, z: 0.5}
+  rate: 0.5
