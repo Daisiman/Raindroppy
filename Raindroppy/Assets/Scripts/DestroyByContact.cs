@@ -1,19 +1,14 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using UnityEngine;
 
 public class DestroyByContact : MonoBehaviour
 {
-    public GameObject explosion;
-    public GameObject playerExplosion;
     public int scoreValue;
+    public bool fragile = false;
     public int lives = 1;
-    public bool isBoss = true;
     GameController gameController;
 
     public int lifeValue;
-    public bool addLives;
-    public bool addScore;
     public bool goodDrops;
     public bool powerUp;
 
@@ -41,13 +36,10 @@ public class DestroyByContact : MonoBehaviour
             else
             {
                 gameController.DecreaseLives();
-
-                if (gameController.lives == 0)
-                {
-                    //Destroy(other.gameObject);
-                }
             }
-
+            Destroy(gameObject);
+        } else if (other.CompareTag("Raindrop"))
+        {
             Destroy(gameObject);
         }
     }

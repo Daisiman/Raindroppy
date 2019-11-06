@@ -17,6 +17,7 @@ public class Pusher : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
+        //other.
         Debug.Log("Push 2");
     }
 }

@@ -67,7 +67,6 @@ public class GameController : MonoBehaviour
             if (!isImmortal)
             {
                 livesHelper += speed / 100 * (-1);
-                //Debug.Log(livesHelper);
 
                 if(livesHelper > 10f)
                 {
@@ -175,14 +174,22 @@ public class GameController : MonoBehaviour
 
     IEnumerator GiveBoostCoroutine()
     {
-        Debug.Log("Inside GiveBoost()");
-
-        speed = -10f;
         isImmortal = true;
 
-        yield return new WaitForSeconds(5f);
+        for (float i = 0f; i < 1f; i += 0.01f)
+        {
+            speed -= 0.1f;
+            yield return new WaitForSeconds(i / 10);
+        }
 
-        speed = -1f;
+        yield return new WaitForSeconds(3f);
+
+        for (float i = 0f; i < 1f; i += 0.01f)
+        {
+            speed += 0.1f;
+            yield return new WaitForSeconds(i / 10);
+        }
+
         isImmortal = false;
     }
 
@@ -241,5 +248,5 @@ public class GameController : MonoBehaviour
             gameOverText.text = "New highscore!";
             PlayerPrefs.SetInt("highestScore", (int)Mathf.Round(score));
         }
-    } 
+    }
 }

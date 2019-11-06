@@ -17,7 +17,7 @@ GameObject:
   - component: {fileID: 114634737930113352}
   m_Layer: 0
   m_Name: Drop 1
-  m_TagString: Untagged
+  m_TagString: Lives
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -135,13 +135,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c1b933ee27831460b83cd53a6a119c0a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  explosion: {fileID: 0}
-  playerExplosion: {fileID: 0}
   scoreValue: 0
+  fragile: 0
   lives: 1
-  isBoss: 0
   lifeValue: 2
-  addLives: 0
-  addScore: 0
   goodDrops: 1
   powerUp: 0

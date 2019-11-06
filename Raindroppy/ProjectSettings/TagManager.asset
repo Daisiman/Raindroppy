@@ -8,6 +8,10 @@ TagManager:
   - Enemy
   - PowerUp
   - Player2
+  - SoundController
+  - Obstacle
+  - Lives
+  - Raindrop
   layers:
   - Default
   - TransparentFX

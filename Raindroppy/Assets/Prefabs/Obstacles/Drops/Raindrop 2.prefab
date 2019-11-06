@@ -19,7 +19,7 @@ GameObject:
   - component: {fileID: 114922873969724194}
   m_Layer: 0
   m_Name: Raindrop 2
-  m_TagString: Untagged
+  m_TagString: Raindrop
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -108,7 +108,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 402de64f023ab4e06bdda5aa6fc17dec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 1.5
+  multiplier: -1.9
 --- !u!54 &54169518784388186
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -137,14 +137,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c1b933ee27831460b83cd53a6a119c0a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  explosion: {fileID: 0}
-  playerExplosion: {fileID: 0}
   scoreValue: 0
+  fragile: 1
   lives: 1
-  isBoss: 1
   lifeValue: 0
-  addLives: 0
-  addScore: 0
   goodDrops: 0
   powerUp: 0
 --- !u!114 &114471703048852372

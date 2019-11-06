@@ -6,7 +6,6 @@ public class BGScroller : MonoBehaviour
 {
 
     GameController gameController;
-    public float scrollSpeed;
     public float tileSizeZ;
 
     private Vector3 startPosition;
@@ -26,9 +25,12 @@ public class BGScroller : MonoBehaviour
         startPosition = transform.position;
     }
 
-    void Update()
+    void FixedUpdate()
     {
-        float newPosition = Mathf.Repeat(Time.time * gameController.speed, tileSizeZ);
+        float offsetAddition = gameController.speed * Time.fixedDeltaTime;
+        float existingOffset = transform.position.z;
+        float newPosition = Mathf.Repeat(existingOffset + offsetAddition, tileSizeZ);
+
         transform.position = startPosition + Vector3.forward * newPosition;
     }
 }
