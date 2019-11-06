@@ -34,8 +34,11 @@ public class GameController : MonoBehaviour
     public int lives;
     private float livesHelper;
 
+    GameObject player;
+
     void Start()
     {
+        player = GameObject.FindWithTag("Player");
         gameOver = false;
         restart = false;
         restartText.text = "";
@@ -71,6 +74,9 @@ public class GameController : MonoBehaviour
                     livesHelper = 0;
                 }
             }
+
+            player.transform.localScale = new Vector3(1f, 1f, 1f) * Mathf.Log10(lives);
+            speed = -1 * Mathf.Log10(lives);
         }
 	}
 
