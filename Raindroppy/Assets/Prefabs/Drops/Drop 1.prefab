@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 7565144036456422837}
   - component: {fileID: 5889083579548821950}
   - component: {fileID: 114634737930113352}
+  - component: {fileID: 114163995395131758}
   m_Layer: 0
   m_Name: Drop 1
   m_TagString: Lives
@@ -106,7 +107,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 402de64f023ab4e06bdda5aa6fc17dec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: -1
+  multiplier: 1
 --- !u!54 &5889083579548821950
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -141,3 +142,25 @@ MonoBehaviour:
   lifeValue: 2
   goodDrops: 1
   powerUp: 0
+--- !u!114 &114163995395131758
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7565144036456422843}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 448119b1f46814206b00514f80ddec3d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rate: 3
+  smoothing: 10
+  startWait: {x: 0, y: 0}
+  maneuverTime: {x: 0.1, y: 0.2}
+  maneuverWait: {x: 0, y: 0.1}
+  boundary:
+    xMin: -6
+    xMax: 6
+    zMin: -20
+    zMax: 20
