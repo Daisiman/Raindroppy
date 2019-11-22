@@ -158,7 +158,7 @@ MonoBehaviour:
   smoothing: 10
   startWait: {x: 0, y: 0}
   maneuverTime: {x: 0.1, y: 0.2}
-  maneuverWait: {x: 0, y: 0.1}
+  maneuverWait: {x: 0, y: 1}
   boundary:
     xMin: -6
     xMax: 6

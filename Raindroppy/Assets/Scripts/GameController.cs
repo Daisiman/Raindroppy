@@ -77,9 +77,10 @@ public class GameController : MonoBehaviour
                     livesHelper = 0;
                 }
             }
-
-            player.transform.localScale = Vector3.MoveTowards(player.transform.localScale, new Vector3(1f, 1f, 1f) * Mathf.Log10(lives), Time.deltaTime * 3);
-            speed = speedBoost + -1 * Mathf.Log10(lives);
+            if (!gameOver) {
+                player.transform.localScale = Vector3.MoveTowards(player.transform.localScale, new Vector3(1f, 1f, 1f) * Mathf.Max(Mathf.Log10(lives), 0.5f), Time.deltaTime * 3);
+            }
+            speed = speedBoost + -1 * Mathf.Max(Mathf.Log10(lives), 0.5f);
         }
 	}
 
