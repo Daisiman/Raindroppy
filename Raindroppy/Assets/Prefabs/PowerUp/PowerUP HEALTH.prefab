@@ -108,7 +108,6 @@ GameObject:
   - component: {fileID: 4363961867222226}
   - component: {fileID: 54541607311937128}
   - component: {fileID: 136564527738030816}
-  - component: {fileID: 114453897306310062}
   - component: {fileID: 114373170679627716}
   - component: {fileID: 114221579485808118}
   m_Layer: 0
@@ -163,19 +162,6 @@ CapsuleCollider:
   m_Height: 1.34
   m_Direction: 1
   m_Center: {x: -0.026502132, y: 0.020878792, z: -0.04976344}
---- !u!114 &114453897306310062
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1502331535128278}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e3879095c64e4459786712119504c79a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  tumble: 5
 --- !u!114 &114373170679627716
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -201,6 +187,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a6a6d5fdd193c46b7b05e82bb48b7c3f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scoreValue: 0
   isLivesPowerUp: 1
   isBoostPowerUp: 0
+  boostSound: {fileID: 0}

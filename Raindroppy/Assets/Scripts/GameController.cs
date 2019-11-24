@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class GameController : MonoBehaviour
 {
-    public GameObject boss;
     public GameObject[] hazards;
     public GameObject[] raindrops;
     public GameObject[] powerUps;
@@ -15,7 +14,8 @@ public class GameController : MonoBehaviour
     public float startWait;
     public float waveWait;
     public float speed;
-    private bool isImmortal = false;
+    public float speedBoost;
+    private bool isImmortal;
 
     public GUIText scoreText;
     public GUIText restartText;
@@ -33,13 +33,15 @@ public class GameController : MonoBehaviour
     float score;
 
     public int lives;
-    private float livesHelper = 0;
+    private float livesHelper;
 
-    private bool increaseSpeed = false;
-    private bool decreaseSpeed = false;
+    GameObject player;
+    PlayerController playerController;
 
     void Start()
     {
+        player = GameObject.FindWithTag("Player");
+        playerController = player.GetComponent<PlayerController>();
         gameOver = false;
         restart = false;
         restartText.text = "";
@@ -66,8 +68,7 @@ public class GameController : MonoBehaviour
 
             if (!isImmortal)
             {
-                livesHelper += speed / 100 * (-1);
-                Debug.Log(livesHelper);
+                livesHelper += speed / 50 * (-1);
 
                 if(livesHelper > 10f)
                 {
@@ -76,30 +77,11 @@ public class GameController : MonoBehaviour
                     livesHelper = 0;
                 }
             }
+            if (!gameOver) {
+                player.transform.localScale = Vector3.MoveTowards(player.transform.localScale, new Vector3(1f, 1f, 1f) * Mathf.Max(Mathf.Log10(lives), 0.5f), Time.deltaTime * 3);
+            }
+            speed = speedBoost + -1 * Mathf.Max(Mathf.Log10(lives), 0.5f);
         }
-
-
-        //if (increaseSpeed)
-        //{
-        //    speed -= 0.02f;
-        //    if (speed < -5f)
-        //    {
-        //        increaseSpeed = false;
-        //        Debug.Log("Increase speed done");
-        //        speed = -5f;
-        //    }
-        //}
-
-        //if (decreaseSpeed)
-        //{
-        //    speed += 0.02f;
-        //    if (speed > -1f)
-        //    {
-        //        decreaseSpeed = false;
-        //        Debug.Log("Decrease speed done");
-        //        speed = -1f;
-        //    }
-        //}
 	}
 
 	IEnumerator SpawnWaves()
@@ -109,6 +91,7 @@ public class GameController : MonoBehaviour
         {
             for (int j = 0; j < cycleLength; j++) {
                 {
+                    // raindrop
                     GameObject raindrop = raindrops[Random.Range(0, raindrops.Length)];
                     Vector3 spawnPosition = new Vector3(Random.Range(-raindropSpawnValues.x, raindropSpawnValues.x), raindropSpawnValues.y, raindropSpawnValues.z);
                     Quaternion spawnRotation = Quaternion.identity;
@@ -136,12 +119,6 @@ public class GameController : MonoBehaviour
                     Instantiate(powerUp, spawnPositionPowerUp, spawnRotationPowerUp);
 
                     yield return new WaitForSeconds(spawnWait);
-
-                    //// raindrop
-                    //GameObject raindrop = raindrops[Random.Range(0, raindrops.Length)];
-                    //Vector3 spawnPosition = new Vector3(Random.Range(-raindropSpawnValues.x, raindropSpawnValues.x), raindropSpawnValues.y, raindropSpawnValues.z);
-                    //Quaternion spawnRotation = Quaternion.identity;
-                    //Instantiate(raindrop, spawnPosition, spawnRotation);
                 }
 
                 yield return new WaitForSeconds(waveWait);
@@ -180,20 +157,29 @@ public class GameController : MonoBehaviour
 
     IEnumerator GiveBoostCoroutine()
     {
-        Debug.Log("Inside GiveBoost()");
-
-        speed = -10f;
         isImmortal = true;
 
-        yield return new WaitForSeconds(5f);
+        for (float i = 0f; i < 1f; i += 0.01f)
+        {
+            speedBoost -= 0.1f;
+            yield return new WaitForSeconds(i / 10);
+        }
 
-        speed = -1f;
+        yield return new WaitForSeconds(3f);
+
+        for (float i = 0f; i < 1f; i += 0.01f)
+        {
+            speedBoost += 0.1f;
+            yield return new WaitForSeconds(i / 10);
+        }
+
         isImmortal = false;
     }
 
     public void AddLives(int lifeValue)
     {
         lives += lifeValue;
+        playerController.PlayPickupSound();
         UpdateLives();
     }
 
@@ -246,5 +232,5 @@ public class GameController : MonoBehaviour
             gameOverText.text = "New highscore!";
             PlayerPrefs.SetInt("highestScore", (int)Mathf.Round(score));
         }
-    } 
+    }
 }

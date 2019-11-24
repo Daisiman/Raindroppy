@@ -8,6 +8,10 @@ TagManager:
   - Enemy
   - PowerUp
   - Player2
+  - SoundController
+  - Obstacle
+  - Lives
+  - Raindrop
   - MainMenuHighScoreText
   - MainMenuTitleText
   - MainMenuPointsText
