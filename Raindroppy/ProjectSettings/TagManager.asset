@@ -8,6 +8,9 @@ TagManager:
   - Enemy
   - PowerUp
   - Player2
+  - MainMenuHighScoreText
+  - MainMenuTitleText
+  - MainMenuPointsText
   layers:
   - Default
   - TransparentFX
