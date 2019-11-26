@@ -63,12 +63,12 @@ public class GameController : MonoBehaviour
         }
         else
         {
-            score += speed/20*(-1);
+            score += speed/50*(-1);
             UpdateScore();
 
             if (!isImmortal)
             {
-                livesHelper += speed / 50 * (-1);
+                livesHelper += speed / 30 * (-1);
 
                 if(livesHelper > 10f)
                 {
@@ -80,7 +80,7 @@ public class GameController : MonoBehaviour
             if (!gameOver) {
                 player.transform.localScale = Vector3.MoveTowards(player.transform.localScale, new Vector3(1f, 1f, 1f) * Mathf.Max(Mathf.Log10(lives), 0.5f), Time.deltaTime * 3);
             }
-            speed = speedBoost + -1 * Mathf.Max(Mathf.Log10(lives), 0.5f);
+            speed = speedBoost + -1 * Mathf.Max(Mathf.Log(lives, 2), 0.5f);
         }
 	}
 
@@ -162,7 +162,7 @@ public class GameController : MonoBehaviour
         for (float i = 0f; i < 1f; i += 0.01f)
         {
             speedBoost -= 0.1f;
-            yield return new WaitForSeconds(i / 10);
+            yield return new WaitForSeconds(i / 30);
         }
 
         yield return new WaitForSeconds(3f);
@@ -170,7 +170,7 @@ public class GameController : MonoBehaviour
         for (float i = 0f; i < 1f; i += 0.01f)
         {
             speedBoost += 0.1f;
-            yield return new WaitForSeconds(i / 10);
+            yield return new WaitForSeconds(i / 30);
         }
 
         isImmortal = false;
