@@ -21,6 +21,8 @@ public class GameController : MonoBehaviour
     public GUIText restartText;
     public GUIText gameOverText;
     public GUIText livesText;
+    public GUIText coinsText;
+    public GUIText totalCoinsText;
 
     public int cycleLength;
 
@@ -31,6 +33,7 @@ public class GameController : MonoBehaviour
 
     bool restart;
     float score;
+    int coins;
 
     public int lives;
     private float livesHelper;
@@ -46,8 +49,10 @@ public class GameController : MonoBehaviour
         restart = false;
         restartText.text = "";
         gameOverText.text = "";
-        gameOverText.text = "";
+        totalCoinsText.text = "";
+        coinsText.text = "";
         score = 0f;
+        coins = 0;
         UpdateScore();
         UpdateLives();
         StartCoroutine(SpawnWaves());
@@ -65,6 +70,7 @@ public class GameController : MonoBehaviour
         {
             score += speed/50*(-1);
             UpdateScore();
+            UpdateCoins();
 
             if (!isImmortal)
             {
@@ -183,10 +189,21 @@ public class GameController : MonoBehaviour
         UpdateLives();
     }
 
+    public void AddCoins(int coinValue)
+    {
+        coins += coinValue;
+        UpdateCoins();
+    }
+
     void UpdateScore()
     {
         int scoreValue = (int)Mathf.Round(score);
         scoreText.text = $"Score: {scoreValue}";
+    }
+
+    void UpdateCoins()
+    {
+        coinsText.text = $"Coins: {coins}";
     }
 
     void UpdateLives()
@@ -232,5 +249,17 @@ public class GameController : MonoBehaviour
             gameOverText.text = "New highscore!";
             PlayerPrefs.SetInt("highestScore", (int)Mathf.Round(score));
         }
+
+        int totalCoins = 0;
+
+        if (PlayerPrefs.HasKey("coins"))
+        {
+            totalCoins = PlayerPrefs.GetInt("coins");
+        }
+
+        totalCoins += coins;
+        PlayerPrefs.SetInt("coins", totalCoins);
+
+        totalCoinsText.text = "Total coins: " + totalCoins;
     }
 }
