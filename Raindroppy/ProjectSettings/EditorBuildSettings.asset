@@ -14,4 +14,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/_Scenes/Main.unity
     guid: 7af8219bdfe1342898f2bb59247eadab
+  - enabled: 1
+    path: Assets/_Scenes/SkinsScene.unity
+    guid: c3550a90f3d4f450e99c36bb7f9d704a
   m_configObjects: {}

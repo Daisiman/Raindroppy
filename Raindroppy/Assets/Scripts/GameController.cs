@@ -203,7 +203,7 @@ public class GameController : MonoBehaviour
 
     void UpdateCoins()
     {
-        coinsText.text = $"Coins: {coins}";
+        coinsText.text = $"Droplets: {coins}";
     }
 
     void UpdateLives()
@@ -241,12 +241,12 @@ public class GameController : MonoBehaviour
             gameOverText.text += " Highscore: " + highestScore;
 
             if (score > highestScore) {
-                gameOverText.text = "New highscore!";
+                gameOverText.text = "New Highscore!";
 
                 PlayerPrefs.SetInt("highestScore", (int)Mathf.Round(score));
             }
         } else {
-            gameOverText.text = "New highscore!";
+            gameOverText.text = "New Highscore!";
             PlayerPrefs.SetInt("highestScore", (int)Mathf.Round(score));
         }
 
@@ -260,6 +260,6 @@ public class GameController : MonoBehaviour
         totalCoins += coins;
         PlayerPrefs.SetInt("coins", totalCoins);
 
-        totalCoinsText.text = "Total coins: " + totalCoins;
+        totalCoinsText.text = "Total Droplets: " + totalCoins;
     }
 }

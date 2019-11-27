@@ -15,6 +15,11 @@ TagManager:
   - MainMenuHighScoreText
   - MainMenuTitleText
   - MainMenuPointsText
+  - PriceText
+  - Skin2Btn
+  - Skin1Btn
+  - Skin1Active
+  - Skin2Active
   layers:
   - Default
   - TransparentFX

@@ -24,9 +24,9 @@ public class MainMenuController : MonoBehaviour
             textHighScore.text = "0";
         }
 
-        if (PlayerPrefs.HasKey("points"))
+        if (PlayerPrefs.HasKey("coins"))
         {
-            int points = PlayerPrefs.GetInt("points");
+            int points = PlayerPrefs.GetInt("coins");
             textPoints.text = points.ToString();
         }
         else
@@ -43,5 +43,10 @@ public class MainMenuController : MonoBehaviour
     public void StartAbout()
     {
         SceneManager.LoadScene("AboutScene");
+    }
+
+    public void StartSkins()
+    {
+        SceneManager.LoadScene("SkinsScene");
     }
 }
