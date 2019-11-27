@@ -4,6 +4,7 @@ public class ConsumePowerUp : MonoBehaviour
 {
     public bool isLivesPowerUp;
     public bool isBoostPowerUp;
+    public bool isCoin;
     AudioSource boostSound;
 
     GameController gameController;
@@ -35,6 +36,10 @@ public class ConsumePowerUp : MonoBehaviour
                 {
                     boostSound.PlayOneShot(boostSound.clip);
                 }
+            }
+
+            if (isCoin) {
+                gameController.AddCoins(1);
             }
 
             Destroy(gameObject);
