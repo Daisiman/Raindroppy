@@ -9,6 +9,10 @@ public class GameController : MonoBehaviour
     public GameObject[] powerUps;
     public Vector3 spawnValues;
     public Vector3 raindropSpawnValues;
+
+    public Material skin1;
+    public Material skin2;
+
     public int hazardCount;
     public float spawnWait;
     public float startWait;
@@ -45,6 +49,23 @@ public class GameController : MonoBehaviour
     {
         player = GameObject.FindWithTag("Player");
         playerController = player.GetComponent<PlayerController>();
+
+        int skin = 1;
+        if (PlayerPrefs.HasKey("skin"))
+        {
+            skin = PlayerPrefs.GetInt("skin");
+        }
+
+        if (skin == 1)
+        {
+            player.GetComponentInChildren<MeshRenderer>().material = skin1;
+        }
+
+        if (skin == 2)
+        {
+            player.GetComponentInChildren<MeshRenderer>().material = skin2;
+        }
+
         gameOver = false;
         restart = false;
         restartText.text = "";

@@ -1426,6 +1426,8 @@ MonoBehaviour:
   - {fileID: 7026868537639687399, guid: 2fd6114eeb558471f995f58fcc365cf2, type: 3}
   spawnValues: {x: 6, y: 0, z: 16}
   raindropSpawnValues: {x: 6, y: 0, z: -5}
+  skin1: {fileID: 2100000, guid: d8b63c3f22580a4418e466a916c76328, type: 2}
+  skin2: {fileID: 2100000, guid: b5521b6ac93f72c4fb12b6f26bcb8a0a, type: 2}
   hazardCount: 20
   spawnWait: 0.1
   startWait: 1
