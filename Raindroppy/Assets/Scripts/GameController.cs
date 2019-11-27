@@ -155,7 +155,6 @@ public class GameController : MonoBehaviour
         UpdateLives();
     }
 
-
     public void GiveBoost()
     {
         StartCoroutine(GiveBoostCoroutine());
