@@ -49,4 +49,9 @@ public class MainMenuController : MonoBehaviour
     {
         SceneManager.LoadScene("SkinsScene");
     }
+
+    public void StartChallenges()
+    {
+        SceneManager.LoadScene("ChallengesScene");
+    }
 }

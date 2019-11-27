@@ -20,6 +20,10 @@ TagManager:
   - Skin1Btn
   - Skin1Active
   - Skin2Active
+  - Skin3Active
+  - Challenge1Active
+  - Challenge2Active
+  - Challenge3Active
   layers:
   - Default
   - TransparentFX

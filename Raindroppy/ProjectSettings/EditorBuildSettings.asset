@@ -17,4 +17,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/_Scenes/SkinsScene.unity
     guid: c3550a90f3d4f450e99c36bb7f9d704a
+  - enabled: 1
+    path: Assets/_Scenes/ChallengesScene.unity
+    guid: 22d786b13dc8f46ebba0d2461a458398
   m_configObjects: {}

@@ -120,6 +120,7 @@ public class SkinsMenuController : MonoBehaviour
         PlayerPrefs.SetInt("coins", coins);
         PlayerPrefs.SetInt("skin", 2);
         PlayerPrefs.SetInt("skin2", 1);
+        PlayerPrefs.SetInt("challenge3", 1);
         init();
     }
 

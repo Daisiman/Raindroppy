@@ -104,6 +104,12 @@ public class GameController : MonoBehaviour
                     livesHelper = 0;
                 }
             }
+
+            if ((int)Mathf.Round(lives) >= 100)
+            {
+                PlayerPrefs.SetInt("challenge2", 1);
+            }
+
             if (!gameOver) {
                 player.transform.localScale = Vector3.MoveTowards(player.transform.localScale, new Vector3(1f, 1f, 1f) * Mathf.Max(Mathf.Log10(lives), 0.5f), Time.deltaTime * 3);
             }
@@ -268,6 +274,10 @@ public class GameController : MonoBehaviour
         } else {
             gameOverText.text = "New Highscore!";
             PlayerPrefs.SetInt("highestScore", (int)Mathf.Round(score));
+        }
+
+        if ((int)Mathf.Round(score) >= 1000) {
+            PlayerPrefs.SetInt("challenge1", 1);
         }
 
         int totalCoins = 0;
