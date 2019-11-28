@@ -24,6 +24,8 @@ TagManager:
   - Challenge1Active
   - Challenge2Active
   - Challenge3Active
+  - MainMenuButton
+  - Button
   layers:
   - Default
   - TransparentFX

@@ -26,7 +26,7 @@ public class Mover : MonoBehaviour
         rb.velocity = transform.forward * gameController.speed * multiplier;
     }
 
-    private void FixedUpdate()
+    void Update()
     {
         rb.velocity = transform.forward * gameController.speed * multiplier;
     }

@@ -28,6 +28,8 @@ public class GameController : MonoBehaviour
     public GUIText coinsText;
     public GUIText totalCoinsText;
 
+    public bool paused = false;
+
     public int cycleLength;
 
     public bool gameOver {
@@ -113,7 +115,7 @@ public class GameController : MonoBehaviour
             if (!gameOver) {
                 player.transform.localScale = Vector3.MoveTowards(player.transform.localScale, new Vector3(1f, 1f, 1f) * Mathf.Max(Mathf.Log10(lives), 0.5f), Time.deltaTime * 3);
             }
-            speed = speedBoost + -1 * Mathf.Max(Mathf.Log(lives, 2), 0.5f);
+            speed = (speedBoost + -1 * Mathf.Max(Mathf.Log(lives, 2), 0.5f)) * Time.timeScale;
         }
 	}
 
@@ -291,5 +293,10 @@ public class GameController : MonoBehaviour
         PlayerPrefs.SetInt("coins", totalCoins);
 
         totalCoinsText.text = "Total Droplets: " + totalCoins;
+    }
+
+    public void PauseGame() {
+        Time.timeScale = paused ? 1 : 0;
+        paused = !paused;
     }
 }
