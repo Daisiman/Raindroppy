@@ -126,7 +126,7 @@ GameObject:
   - component: {fileID: 61715349}
   m_Layer: 0
   m_Name: PauseButton
-  m_TagString: Untagged
+  m_TagString: Pause
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -148,7 +148,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -54.7, y: 607.6}
+  m_AnchoredPosition: {x: -30.6, y: 638.6}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &61715349
@@ -220,7 +220,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: db53959a80517294bbad0df384899526, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 21e9363d6c8b444f5bf8b271c0a7b181, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -854,6 +854,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   paused: 0
+  PauseImg: {fileID: 21300000, guid: 21e9363d6c8b444f5bf8b271c0a7b181, type: 3}
+  PlayImg: {fileID: 21300000, guid: aceca66cfc9df4bd4a47495fef492bed, type: 3}
 --- !u!1 &787106345
 GameObject:
   m_ObjectHideFlags: 0

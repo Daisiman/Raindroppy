@@ -26,6 +26,7 @@ TagManager:
   - Challenge3Active
   - MainMenuButton
   - Button
+  - Pause
   layers:
   - Default
   - TransparentFX
